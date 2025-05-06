@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&family=Grenze:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+  text-align: center;
+  background-image: radial-gradient(circle at center, #323c71, #1e2240, #05070f);
+  color: white;
+  font-family: "Grenze", serif;
+  
+}
+
+#level-title {
+  font-size: 3rem;
+  margin:  5%;
+  color: #FEF2BF;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.btn {
+  margin: 25px;
+  display: inline-block;
+  height: 200px;
+  width: 200px;
+  border: 10px solid #323c71;
+  border-radius: 50%;
+  box-shadow: 2px 2px 0 0 #323c71;
+  cursor: pointer;
+  transition: transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.1); /* Marire buton */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+  
+}
+
+.game-over {
+  background-color: red;
+  opacity: 0.8;
+}
+
+.red, .red:hover {
+  background-color: red;
+}
+
+.green, .green:hover {
+  background-color: green;
+}
+
+.blue, .blue:hover {
+  background-color: blue;
+}
+
+.yellow, .yellow:hover {
+  background-color: yellow;
+}
+
+.pressed {
+  box-shadow: 0 0 20px white;
+  transform: scale(0.95); /* Micsoare buton */
+}
+
+button, a {
+  color: white;
+  background-color: #05070f;
+  width: fit-content;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 500;
+  padding: 0.25rem 1.25rem;
+  border: 1.5px solid #323c71;
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 0 0 #323c71;
+  transition-duration: 200ms;
+}
+
+button:hover, a:hover {
+  transform: translate(2px, 2px);
+  box-shadow:
+    0 0 2px rgba(255, 255, 255, 0.7),
+    0 0 4px #5b6ef5,
+    0 0 4px #5b6ef5;
+}
+
+.navbar, .navbar-toggler, .navbar-brand, .nav-link {
+  color: white;
+}
+
+.navbar-brand:hover, .navbar-toggler:hover, .nav-link:hover {
+  color: white;
+  text-decoration: none;
+} 
+
+.modal-title {
+  color: white;
+}
+
+.modal-content, .modal-header , .modal-body, .list-group-item{
+  background-color: #0f365f;
+  color: white;
+}

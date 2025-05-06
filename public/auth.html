@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TheSimonGame</title>
+  <link rel="stylesheet" href="auth.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <section id="auth">
+    <div>
+      <h2 id="authTitle" class="sign-up-text">Log in</h2>
+      <p id="authSubtext">Access your account!</p>
+    </div>
+
+    <p id="error" style="display: none;"></p>
+    <input id="emailInput" placeholder="Email" />
+    <input id="passwordInput" placeholder="********" type="password" />
+    <button id="authBtn" onclick="authenticate()">Submit</button>
+    <hr />
+    <div class="register-content">
+      <p id="toggleText">Don&apos;t have an account?</p>
+      <button onclick="toggleIsRegister()" id="registerBtn">Sign up</button>
+    </div>
+  </section>
+</body>
+
+  <script>
+    let token = localStorage.getItem('token')
+
+    let isLoading = false
+    let isAuthenticating = false
+    let isRegistration = false
+
+    const apiBase = 'http://localhost:3000/'
+
+    // Elemente DOM
+    const authContent = document.getElementById('auth')
+    const textError = document.getElementById('error')
+    const email = document.getElementById('emailInput')
+    const password = document.getElementById('passwordInput')
+    const authBtn = document.getElementById('authBtn')
+    const registerBtn = document.getElementById('registerBtn')
+    const authTitle = document.getElementById('authTitle')
+    const authSubtext = document.getElementById('authSubtext')
+    const toggleText = document.getElementById('toggleText')
+
+    // Lociga pentru autentificare
+    async function toggleIsRegister() {
+      isRegistration = !isRegistration
+      registerBtn.innerText = isRegistration ? 'Log in' : 'Sign up'
+      document.querySelector('#auth > div h2').innerText = isRegistration ? 'Sign up' : 'Log in'
+      document.querySelector('#auth > div p').innerText = isRegistration ? 'Create an account!' : 'Access your account!'
+      document.querySelector('.register-content p').innerText = isRegistration ? 'Already have an account?' : 'Don\'t have an account?'
+      document.querySelector('.register-content button').innerText = isRegistration ? 'Log in' : 'Sign up'
+    }
+
+    async function authenticate() {
+      const emailVal = email.value
+      const passVal = password.value
+
+      // Verificari de validare
+      if (
+        isLoading ||
+        isAuthenticating ||
+        !emailVal ||
+        !passVal ||
+        passVal.length < 6 ||
+        !emailVal.includes('@')
+      ) { 
+        error.innerText = '❌ Please enter a valid email and password!'
+        error.style.display = 'block'
+        return
+      }
+
+      // Reseteaza mesajul de eroare
+      error.style.display = 'none'
+      isAuthenticating = true
+      authBtn.innerText = 'Authenticating...'
+
+     try {
+        let data
+        let response
+
+        if (isRegistration) {
+          // Creare cont
+          response = await fetch(apiBase + 'auth/register', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username: emailVal, password: passVal })
+          })
+
+        } else {
+          // Logare
+          response = await fetch(apiBase + 'auth/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username: emailVal, password: passVal })
+          })
+        }
+
+        data = await response.json()
+
+        // Verifica raspunsul serverului
+        if (!response.ok) {
+          const serverError = data.error || '❌ Something went wrong'
+          throw new Error(serverError)
+        }
+
+        if (data.token) {
+          token = data.token
+          localStorage.setItem('token', token)
+
+          // // Afiseaza mesaj de succes si "Loading..." pe buton dupa login/inregistrare
+          authBtn.innerText = 'Loading...'
+          authSubtext.innerText = isRegistration 
+            ? '✔️ Account created successfully!' 
+            : '✔️ Logged in successfully!'
+          authSubtext.style.color = 'green'
+
+          // Redirectionare la pagina principala dupa 1 secunda
+          setTimeout(() => {
+            window.location.href = 'index.html' 
+          }, 1000)
+
+        } else {
+          throw Error('❌ Failed to authenticate...')
+        }
+
+      // In caz de eroare, afiseaza mesajul corespunzator
+      } catch (err) {
+        console.error('Error at registration:', err)
+        error.innerText = err.message.includes('Email already exists!')
+         ? '❌ This email is already used. Please try logging in.'
+         : err.message || '❌ Failed to authenticate...'
+        error.style.display = 'block'
+      } finally {
+        authBtn.innerText = 'Submit'
+        isAuthenticating = false
+      }
+    }
+  </script>
+
+</html>
