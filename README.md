@@ -1,6 +1,7 @@
 # 💼 My Developer Portfolio
 
 Welcome to my personal portfolio repository! 
+
 This is where I showcase the websites and web applications I build as I continue to grow as a developer.  
 Each project is stored in its own folder and includes a brief description, technologies used, and instructions on how to run it locally.  
 
@@ -8,7 +9,8 @@ Each project is stored in its own folder and includes a brief description, techn
 
 ## 📌 About This Repository
 
-This portfolio repository serves as a growing collection of my development work. I will continuously add new projects as I build and learn more.  
+This portfolio repository serves as a growing collection of my development work.  
+I will continuously add new projects as I build and learn more.  
 It includes:
 
 - Frontend websites and responsive layouts
