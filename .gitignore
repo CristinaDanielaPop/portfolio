@@ -1,0 +1,12 @@
+# Node modules
+node_modules/
+
+# Environment files
+.env
+
+# SQLite DB
+*.sqlite
+*.sqlite3
+
+# Extras
+upgrades
