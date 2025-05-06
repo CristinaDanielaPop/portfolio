@@ -1,7 +1,17 @@
 # 🎮 Simon Game Backend
 
-A web-based memory game inspired by the classic "Simon" game, with user authentication and score tracking. 
+A web-based memory game inspired by the classic "Simon" game, with user authentication and score tracking.  
 This full-stack project allows users to sign up, log in, play the game, and view their score history.
+
+## 📖 The Story Behind Simon Game
+
+The **Simon Game** was originally created in 1978 by Ralph H. Baer and Howard J. Morrison.  
+It is a memory-based game that challenges players to remember and repeat a sequence of colors and sounds.  
+With its simple yet addictive gameplay, it quickly became a favorite among kids and adults alike.   
+
+This backend project brings the classic Simon game to life in a digital format, enabling players to engage in friendly competition, track their performance, and revisit their best scores over time. The game encourages concentration and memory skills while keeping the fun factor alive with its interactive gameplay.
+
+Whether you are a fan of retro games or new to the Simon challenge, this backend allows you to relive the excitement, keep your score history, and challenge yourself to improve each time you play.
 
 ---
 
