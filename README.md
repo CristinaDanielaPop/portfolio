@@ -20,8 +20,8 @@ It includes:
 
 ## 🛠 Technologies Used
 
-- **Frontend**: HTML5 / CSS3 / JavaScript / Bootstrap
-- **Backend**: Node.js / Express
+- **Frontend**: HTML5 / CSS3 / JavaScript / Bootstrap 5
+- **Backend**: Node.js / Express.js
 - **Database**: SQLite / MySQL
 - **Authentication**: JWT, bycrypt
 - **Version Control**: Git & GitHub
