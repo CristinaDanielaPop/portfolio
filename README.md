@@ -41,6 +41,19 @@ It includes a backend server that handles:
 - 💾 **A database that stores user profiles and their game scores**
 - 📊 **Functionality for users to view all their past scores**
 
+
+### [Poveste-magice](./povesti-magice)
+
+🔹 **Description**  
+
+The **Povesti magice** is an interactive web application for generating and listening to AI-powered children’s stories in Romanian.
+Developed as a bachelor’s degree project, it combines the following features:
+- 🤖 Story generation using a large language model (Meta Llama 3.1)  
+- 🔊 Text-to-speech synthesis with Google Cloud for natural audio playback  
+- 🔐 User authentication with secure password encryption  
+- 🗃️ A SQLite database to manage users, stories, and achievements  
+- 🎮 Gamification elements to motivate and engage young users  
+
 ---
 
 ## ⚙️ Running Locally
