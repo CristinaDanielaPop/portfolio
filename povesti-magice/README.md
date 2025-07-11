@@ -36,30 +36,30 @@ Developed as a bachelor’s degree project, it combines advanced language models
    ```
 
 2. Navigate to the project folder:
-  ```bash
-  cd portfolio/povesti-magice
-  ```
+   ```bash
+   cd portfolio/povesti-magice
+   ```
 
 3. Install dependencies:
    
-  ```bash
-  npm install
-  ```
+   ```bash
+   npm install
+   ```
 
 4. Create a .env file in the project root with your API keys and environment variables. Example:
    
-  ```bash
-  PORT=3000
-  JWT_SECRET=your_jwt_secret
-  GOOGLE_TTS_API_KEY=your_google_api_key
-  OPENROUTER_API_KEY=your_openrouter_api_key
-  ```
+   ```bash
+   PORT=3000
+   JWT_SECRET=your_jwt_secret
+   GOOGLE_TTS_API_KEY=your_google_api_key
+   OPENROUTER_API_KEY=your_openrouter_api_key
+   ```
 
 5. Start the application:
    
-  ```bash
-  npm start
-  ```
+   ```bash
+   npm start
+   ```
 
  6. Open your browser and go to http://localhost:3000
 
