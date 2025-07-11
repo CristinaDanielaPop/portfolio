@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="avatars/flaticon.png" type="image/png">
+  <title>✨Povești magice✨</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <section id="auth">
+    <div>
+      <h2 id="authTitle" class="sign-up-text">Log in</h2>
+      <p id="authSubtext">Intră în cont!</p>
+    </div>
+
+    <p id="error" style="display: none;"></p>
+    <input id="emailInput" placeholder="Email" type="email" />
+    <input id="passwordInput" placeholder="********" type="password" />
+    <select id="roleSelect" style="display: none;">
+      <option value="">Alege rolul</option>
+      <option value="user">User</option>
+      <option value="creator">Creator</option>
+    </select>
+
+    <!-- Containerul avatarilor (vizibil doar la înregistrare) -->
+    <div class="mb-3" id="avatarSelection" style="display: none;">
+      <div class="w-100 text-center mb-2">
+        <label class="form-label m-0">Alege avatar</label>
+      </div>
+      <!-- Lista de avatruri -->
+      <div class="avatar-selection ">
+        <div class="avatar-option" data-avatar="printesa">
+          <img src="avatars/printesa.png" alt="Prințesă" class="avatar-img">
+        </div>
+        <div class="avatar-option" data-avatar="cavaler">
+          <img src="avatars/cavaler.png" alt="Cavaler" class="avatar-img">
+        </div>
+        <div class="avatar-option" data-avatar="dragon">
+          <img src="avatars/dragon.png" alt="Dragon" class="avatar-img">
+        </div>
+        <div class="avatar-option" data-avatar="elf">
+          <img src="avatars/elf.png" alt="Elf" class="avatar-img">
+        </div>
+        <div class="avatar-option" data-avatar="vrajitor">
+          <img src="avatars/vrajitor.png" alt="Vrăjitor" class="avatar-img">
+        </div>
+        <div class="avatar-option" data-avatar="broasca">
+          <img src="avatars/broasca.png" alt="Broască" class="avatar-img">
+        </div>
+        <div class="avatar-option" data-avatar="spadasin">
+          <img src="avatars/spadasin.png" alt="Spadasin" class="avatar-img">
+        </div>
+        <div class="avatar-option" data-avatar="rege">
+          <img src="avatars/rege.png" alt="Rege" class="avatar-img">
+        </div>
+      </div>
+      <input type="hidden" id="userAvatar" name="avatar" required>
+    </div>
+
+    <button id="authBtn" onclick="authenticate()">Submit</button>
+    <hr />
+    <div class="register-content">
+      <p id="toggleText">Nu ai un cont?</p>
+      <button onclick="toggleIsRegister()" id="registerBtn">Sign up</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Povești magice | Creat cu ❤️ de <a class="footer-link"
+          href="https://www.linkedin.com/in/cristina-daniela-istovan-7b0291250">Cristina Pop</a></p>
+    </div>
+  </footer>
+
+  <script src="js/auth.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+# Node modules - don't commit dependencies
+node_modules/
+
+# Environment variables file
+.env
+
+# Database files
+*.sqlite
+*.db
+
+# TTS secret/config file
+text-to-speech.json

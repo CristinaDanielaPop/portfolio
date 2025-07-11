@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Povesti magice - Genereaza povesti cu ajutorul AI-ului" />
+  <link rel="icon" href="avatars/flaticon.png" type="image/png">
+  <title>✨Povești magice✨</title>
+
+  <!-- CSS, JS & Popper, Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+    integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+    crossorigin="anonymous"></script>
+
+  <!-- Fișiere necesare -->
+  <link rel="stylesheet" href="styles.css">
+
+  <script src="js/toast.js" defer></script>
+  <script src="js/creator.js" type="module"></script>
+
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-creator">
+    <a href="indexCreator.html" class="navbar-brand" id="navbar-brand">✨ 🏰 Povești magice ✨</a>
+  
+    <div class="navbar-links">
+      <div class="navbar-avatar hidden" id="avatar-container">
+        <img id="user-avatar" src="" alt="Avatar utilizator" />
+      </div>
+      <a href="#" class="nav-link" id="stories-btn" data-bs-toggle="modal" data-bs-target="#povestiModal">📚 Poveștile mele</a>
+      <a href="#" class="nav-link" id="logout-btn">Logout</a>
+    </div>
+  </nav>
+
+  <!-- Secțiune pentru a scrie o poveste -->
+  <div class="story-container" enctype="multipart/form-data">
+    
+    <form id="storyForm">
+      <h1>Scrie o poveste</h1>
+    
+      <label for="storyTitle">Titlul poveștii</label>
+      <input type="text" id="storyTitle" name="storyTitle" placeholder="Introdu titlul poveștii" required />
+    
+      <label for="storyStyle">Stilul poveștii</label>
+      <select id="storyStyle" name="storyStyle" required>
+        <option value="" disabled selected>Selectează stilul poveștii</option>
+        <option value="aventură">Aventură</option>
+        <option value="basm clasic">Basm clasic</option>
+        <option value="fantezie">Fantezie</option>
+        <option value="educativă">Poveste educativă</option>
+        <option value="comedie">Comedie</option>
+        <option value="mister">Mister</option>
+      </select>
+    
+      <label for="storyImages">Încarcă imagini</label>
+      <input type="file" id="storyImages" name="images" accept="image/*" multiple />
+    
+      <label for="storyText">Povestea ta</label>
+      <textarea id="storyText" name="storyText" placeholder="Scrie povestea aici..." class="auto-resize" required></textarea>
+    
+      <button type="submit">Salvează povestea</button>
+    </form>
+
+    <!-- Secțiune pentru citire -->
+    <div id="citirePoveste" style="display: none;">
+      <h2 id="storyTitleAfisat"></h2>
+
+      <!-- Carousel imagini poveste -->
+      <div id="carouselContainer" class="mt-4" style="display: none;">
+        <div id="storyCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner" id="carouselInner"></div>
+      
+          <button class="carousel-control-prev" type="button" data-bs-target="#storyCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon custom-arrow" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#storyCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon custom-arrow" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      
+        <!-- Thumbnails -->
+        <div id="carouselThumbnails" class="d-flex justify-content-center flex-wrap gap-2 mt-3"></div>
+      </div>
+
+      <p id="storyContentAfisat"></p>
+    </div>
+  </div>
+
+  <!-- Modal Povești -->
+  <div class="modal fade" id="povestiModal" tabindex="-1" aria-labelledby="povestiModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title w-100 text-center" id="povestiModalLabel">Povești create</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul id="storiesList" class="list-group">
+  
+            <!-- Poveștile vor fi afișate aici -->
+  
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast container -->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <div id="storyToast" class="toast align-items-center  border-0" role="alert" data-bs-delay="2500">
+      <div class="d-flex">
+        <div class="toast-body" id="toastMessage">
+          
+          <!-- Mesajele/erorile vor fi afișate aici -->
+
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Povești magice | Creat cu ❤️ de <a class="footer-link"
+          href="https://www.linkedin.com/in/cristina-daniela-istovan-7b0291250">Cristina Pop</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Eveniment pentru butonul "Logout"
+    document.getElementById('logout-btn').addEventListener('click', function (e) {
+      e.preventDefault()
+      localStorage.removeItem('token') // Șterge token-ul din localStorage
+      localStorage.removeItem('avatar') // Șterge avatarul din localStorage
+      window.location.href = 'index.html' // Redirecționează utilizatorul către pagina principală
+    })
+
+  </script>
+</body>
+  
