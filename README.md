@@ -41,7 +41,7 @@ It includes a backend server that handles:
 - 💾 **A database that stores user profiles and their game scores**
 - 📊 **Functionality for users to view all their past scores**
 
---
+---
 
 ### [Povesti-magice](./povesti-magice)
 
