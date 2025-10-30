@@ -1,4 +1,4 @@
-# 💼 My Developer Portfolio
+# 💼 My developer portfolio
 
 Welcome to my personal portfolio repository! 
 
@@ -7,7 +7,7 @@ Each project is stored in its own folder and includes a brief description, techn
 
 ---
 
-## 📌 About This Repository
+## 📌 About this repository
 
 This portfolio repository serves as a growing collection of my development work.  
 I will continuously add new projects as I build and learn more.  
@@ -18,7 +18,7 @@ It includes:
 - Projects using authentication, databases, and APIs
 - Personal experiments and learning projects
 
-## 🛠 Technologies Used
+## 🛠 Technologies used
 
 - **Frontend**: HTML5 / CSS3 / JavaScript / Bootstrap 5
 - **Backend**: Node.js / Express.js / PHP
@@ -28,13 +28,13 @@ It includes:
 
 ---
 
-## 📂 Featured Projects
+## 📂 Featured projects
 
-### [Simon Game Backend](./simon-game-backend)
+### [Simon game backend](./simon-game-backend)
 
 🔹 **Description**  
 
-The **Simon Game Backend** is a full-stack web application inspired by the classic memory game "Simon".  
+The **Simon game backend** is a full-stack web application inspired by the classic memory game "Simon".  
 It includes a backend server that handles:
 
 - 🔐 **User authentication and session handling**
@@ -57,7 +57,7 @@ Developed as a bachelor’s degree project, it combines the following features:
 
 ---
 
-## ⚙️ Running Locally
+## ⚙️ Running locally
 
 You will find details on each project inside the README.md file.
 
