@@ -1,11 +1,11 @@
-# 🎮 Simon Game Backend
+# 🎮 Simon game backend
 
 A web-based memory game inspired by the classic "Simon" game, with user authentication and score tracking.  
 This full-stack project allows users to sign up, log in, play the game, and view their score history.
 
-## 📖 The Story Behind Simon Game
+## 📖 The story behind Simon's game
 
-The **Simon Game** was originally created in 1978 by Ralph H. Baer and Howard J. Morrison.  
+The **Simon game** was originally created in 1978 by Ralph H. Baer and Howard J. Morrison.  
 It is a memory-based game that challenges players to remember and repeat a sequence of colors and sounds.  
 With its simple yet addictive gameplay, it quickly became a favorite among kids and adults alike.   
 
@@ -25,7 +25,7 @@ Whether you are a fan of retro games or new to the Simon challenge, this backend
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Tech stack
 
 - **Frontend:** HTML, CSS, Bootstrap, JavaScript
 - **Backend:** Node.js, Express
@@ -34,9 +34,9 @@ Whether you are a fan of retro games or new to the Simon challenge, this backend
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Getting started
 
-### 1. Clone the Repository
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/yourusername/portfolio.git
@@ -60,3 +60,4 @@ npm start
 # CTRL+click on the link provided in terminal
 http://localhost:3000
 ```
+
