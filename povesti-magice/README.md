@@ -1,6 +1,6 @@
 # Povești magice
 
-**Povești Magice** is an interactive web application designed for children aged 5-10 that generates and reads aloud AI-powered stories in Romanian.  
+**Povești magice** is an interactive web application designed for children aged 5-10 that generates and reads aloud AI-powered stories in Romanian.  
 Developed as a bachelor’s degree project, it combines advanced language models with speech synthesis to create an engaging and educational experience.
 
 ---
