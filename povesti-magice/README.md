@@ -1,4 +1,4 @@
-# Povești Magice
+# Povești magice
 
 **Povești Magice** is an interactive web application designed for children aged 5-10 that generates and reads aloud AI-powered stories in Romanian.  
 Developed as a bachelor’s degree project, it combines advanced language models with speech synthesis to create an engaging and educational experience.
@@ -7,27 +7,27 @@ Developed as a bachelor’s degree project, it combines advanced language models
 
 ## Features
 
-- 🤖 **Story Generation:** uses Meta Llama 3.1, a large language model, to generate creative and coherent stories based on user keywords and style choices.
+- 🤖 **Story generation:** uses Meta Llama 3.1, a large language model, to generate creative and coherent stories based on user keywords and style choices.
 - 🔊 **Text-to-Speech:** integrates Google Cloud Text-to-Speech with DeepMind technology for natural and clear audio playback in Romanian.
-- 🔐 **User Authentication:** secure login and registration system using bcryptjs for password hashing and JSON Web Tokens (JWT) for session management.
-- 🗃️ **Data Storage:** SQLite relational database storing users, stories, achievements, and relationships among them.
+- 🔐 **User authentication:** secure login and registration system using bcryptjs for password hashing and JSON Web Tokens (JWT) for session management.
+- 🗃️ **Data storage:** SQLite relational database storing users, stories, achievements, and relationships among them.
 - 🎮 **Gamification:** achievement system with visual progress and rewards to motivate users.
-- 🚫 **Content Safety:** real-time filtering of inappropriate language to ensure a safe environment for children.
+- 🚫 **Content safety:** real-time filtering of inappropriate language to ensure a safe environment for children.
 
 ---
 
-## Technologies Used
+## Technologies used
 
 - **Frontend:** HTML, CSS, Bootstrap, JavaScript
 - **Backend:** Node.js, Express.js
 - **Database:** SQLite
-- **AI Integration:** Meta Llama 3.1 via OpenRouter API
+- **AI integration:** Meta Llama 3.1 via OpenRouter API
 - **Text-to-Speech:** Google Cloud Text-to-Speech API
 - **Authentication:** bcryptjs, jsonwebtoken
 
 ---
 
-## Installation & Running Locally
+## Installation & running locally
 
 1. Clone the repository:
 
